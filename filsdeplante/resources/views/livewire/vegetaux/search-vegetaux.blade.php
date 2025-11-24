@@ -5,14 +5,14 @@
         {{-- Formulaire de recherche --}}
         <div class="mb-6">
             <div class="flex gap-2">
-                <input 
-                    type="text" 
+                <input
+                    type="text"
                     wire:model="searchTerm"
                     wire:keydown.enter="search"
                     placeholder="Entrez un terme (ex: Rose, Paris, Chat...)"
                     class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                 >
-                <button 
+                <button
                     wire:click="search"
                     wire:loading.attr="disabled"
                     class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
@@ -51,7 +51,7 @@
                     @if($imageUrl)
                         <div class="md:col-span-1">
                             <img 
-                                src="{{ $imageUrl }}" 
+                                src="{{ $imageUrl }}"
                                 alt="{{ $title }}"
                                 class="w-full rounded-lg shadow-md object-cover"
                             >
@@ -67,23 +67,15 @@
                                 </p>
                             </div>
                             
-                            @if($pageType === 'disambiguation')
-                                <div class="mt-4 p-4 bg-blue-50 border-l-4 border-primary rounded">
-                                    <p class="text-sm text-dark">
-                                        💡 <strong>Conseil :</strong> Ce terme a plusieurs significations. 
-                                        Essayez d'être plus précis dans votre recherche 
-                                        (ex: "Rose fleur" ou "Rose couleur").
-                                    </p>
-                                </div>
-                            @endif
+                            
                         </div>
                     @endif
                 </div>
 
                 {{-- Lien vers Wikipedia --}}
                 <div class="mt-6 pt-4 border-t">
-                    <a 
-                        href="https://fr.wikipedia.org/wiki/{{ urlencode($title) }}" 
+                    <a
+                        href="https://fr.wikipedia.org/wiki/{{ urlencode($title) }}"
                         target="_blank"
                         class="inline-flex items-center gap-2 text-primary hover:text-dark font-medium"
                     >

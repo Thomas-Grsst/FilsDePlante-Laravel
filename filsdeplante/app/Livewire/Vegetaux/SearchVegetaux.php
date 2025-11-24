@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Vegetaux;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Http;
 
-class PlantSearch extends Component
+class SearchVegetaux extends Component
 {
     public $searchTerm = '';
     public $title = '';
@@ -74,6 +74,6 @@ class PlantSearch extends Component
 
     public function render()
     {
-        return view('livewire.plant-search');
+        return view('livewire.vegetaux.search-vegetaux');
     }
 }

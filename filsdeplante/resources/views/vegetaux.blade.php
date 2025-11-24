@@ -8,6 +8,7 @@
     <div class="max-w-[1200px] my-12 mx-auto py-0 px-6">
         <x-title>Catalogue des Végétaux</x-title>
 
-        <livewire:plant-search />
+        <livewire:vegetaux.search-vegetaux />
     </div>
+    <x-footer />
 </x-layouts.app>
