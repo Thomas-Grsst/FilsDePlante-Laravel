@@ -1,17 +1,3 @@
-{{-- @props(['name',
-        'description',
-        'image',
-        'type',
-        'seasons',
-        'plantation',
-        'recolte',
-        'exposition',
-        'arrosage',
-        'entretien',
-        'conseil',
-        'temps' => '3 jours']) --}}
-
-
 <div>
     <div class="relative mb-4">
         <input
@@ -22,6 +8,44 @@
         >
         <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">
             <i class="fas fa-search"></i>
+        </div>
+    </div>
+
+    <h3 class="flex flex-wrap justify-center m-5 mb-10 text-primary font-semibold text-3xl">Aliments Populaires</h3>
+    
+    <div class="justify-center">
+        <div class="flex flex-wrap gap-2 mb-6 justify-center">
+            @foreach (['Tomate', 'Carotte', 'Laitue', 'Radis', 'Basilic', 'Poivron', 'Concombre', 'Courgette'] as $popular)
+                <button
+                    wire:click="$set('search', '{{ $popular }}')"
+                    class="bg-green-100/70 border border-primary text-primary px-4 py-2 rounded-full text-sm hover:bg-green-200 transition"
+                >
+                    {{ $popular }}
+                </button>
+            @endforeach
+        </div>
+
+        <div class="flex items-center mb-6 justify-center">
+            <select wire:model.live="filterType" class="border border-gray-300 rounded-lg p-2 mr-2">
+                <option value="">Tous les types</option>
+                <option value="legume-feuille">Légumes Feuilles</option>
+                <option value="legume-racine">Légumes Racines</option>
+                <option value="tubercule">Tubercules</option>
+                <option value="legumineuse">Légumineuse</option>
+                <option value="legume-fruit">Légumes Fruits</option>
+                <option value="bulbe">Bulbe</option>
+                <option value="aromatique">Aromatiques</option>
+                <option value="petit-fruit">Petits Fruits</option>
+                <option value="arbre-fruitier">Arbre Fruitier</option>
+            </select>
+            
+            <select wire:model.live="filterSeason" class="border border-gray-300 rounded-lg p-2">
+                <option value="">Toutes les saisons</option>
+                <option value="Printemps">Printemps</option>
+                <option value="Ete">Été</option>
+                <option value="Automne">Automne</option>
+                <option value="Hiver">Hiver</option>
+            </select>
         </div>
     </div>
 
@@ -57,7 +81,7 @@
                     <div class="space-y-4">
                         <div class="flex items-start">
                             <div class="p-2 rounded-lg mr-3">
-                                <i class="fas fa-calendar-alt "></i>
+                                <i class="fas fa-calendar-alt"></i>
                             </div>
                             <div>
                                 <p class="font-semibold text-gray-800">Plantation</p>
@@ -67,7 +91,7 @@
                         
                         <div class="flex items-start">
                             <div class="p-2 rounded-lg mr-3">
-                                <i class="fas fa-hand-holding-heart "></i>
+                                <i class="fas fa-hand-holding-heart"></i>
                             </div>
                             <div>
                                 <p class="font-semibold text-gray-800">Récolte</p>
@@ -76,8 +100,8 @@
                         </div>
                         
                         <div class="flex items-start">
-                            <div class=" p-2 rounded-lg mr-3">
-                                <i class="fas fa-sun "></i>
+                            <div class="p-2 rounded-lg mr-3">
+                                <i class="fas fa-sun"></i>
                             </div>
                             <div>
                                 <p class="font-semibold text-gray-800">Exposition</p>
@@ -111,7 +135,7 @@
 
     <!-- Modal de détails -->
     @if($showModal && $selectedPlant)
-    <div class="fixed inset-0 bg-white/10 backdrop-blur-sm flex items-center justify-center p-4 z-5">
+    <div class="fixed inset-0 bg-white/10 backdrop-blur-sm flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
             <!-- En-tête du modal -->
             <div class="relative">

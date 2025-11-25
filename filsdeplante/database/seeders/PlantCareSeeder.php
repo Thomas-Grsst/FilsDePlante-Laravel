@@ -54,9 +54,9 @@ class PlantCareSeeder extends Seeder
         $coriandre = Plant::where('name', 'Coriandre')->first();
         $estragon = Plant::where('name', 'Estragon')->first();
         $aneth = Plant::where('name', 'Aneth')->first();
-        $fraise = Plant::where('name', 'Fraise')->first();
+        $fraisier = Plant::where('name', 'Fraisier')->first();
         $framboisier = Plant::where('name', 'Framboisier')->first();
-        $cassis = Plant::where('name', 'Cassis')->first();
+        $cassissier = Plant::where('name', 'Cassissier')->first();
         $groseillier = Plant::where('name', 'Groseillier')->first();
         $murier = Plant::where('name', 'Mûrier')->first();
         $myrtillier = Plant::where('name', 'Myrtillier')->first();
@@ -586,9 +586,9 @@ class PlantCareSeeder extends Seeder
             ]);
         }
 
-        if ($fraise) {
+        if ($fraisier) {
             PlantCare::create([
-                'plant_id' => $fraise->id,
+                'plant_id' => $fraisier->id,
                 'plantation' => 'Août à Octobre (meilleure période), Mars à Avril',
                 'recolte' => 'Mai à Juillet selon les variétés',
                 'exposition' => 'Soleil ou mi-ombre',
@@ -610,9 +610,9 @@ class PlantCareSeeder extends Seeder
             ]);
         }
 
-        if ($cassis) {
+        if ($cassissier) {
             PlantCare::create([
-                'plant_id' => $cassis->id,
+                'plant_id' => $cassissier->id,
                 'plantation' => 'Octobre à Mars',
                 'recolte' => 'Juillet',
                 'exposition' => 'Soleil ou mi-ombre',

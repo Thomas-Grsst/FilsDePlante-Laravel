@@ -8,10 +8,10 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        // D'abord les plantes
         $this->call(PlantSeeder::class);
         
-        // Ensuite les soins (qui dépendent des plantes)
         $this->call(PlantCareSeeder::class);
+
+        $this->call(GuideSeeder::class);
     }
 }
