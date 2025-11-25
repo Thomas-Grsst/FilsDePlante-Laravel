@@ -78,7 +78,7 @@
 
     <!-- Modal -->
     @if($showModal && $selectedGuide)
-    <div class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 px-4">
+    <div class="fixed inset-0 bg-white/10 backdrop-blur-sm flex items-center justify-center p-4 z-50">
 
         <div class="bg-white max-w-3xl w-full rounded-xl shadow-xl p-6 overflow-y-auto max-h-[90vh] relative">
 

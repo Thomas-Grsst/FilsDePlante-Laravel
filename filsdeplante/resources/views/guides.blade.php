@@ -6,7 +6,8 @@
 
     <div class="max-w-[1200px] my-12 mx-auto py-0 px-6">
         <x-title>Nos Guides de Jardinage</x-title>
+        <livewire:guides.search-guides />
     </div>
-    <livewire:guides.search-guides />
+
     <x-footer />
 </x-layouts.app>
