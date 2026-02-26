@@ -7,7 +7,7 @@
                 <h1 class="text-3xl font-bold text-white">Fils de Plante</h1>
             </div>
 
-            <!-- Navigation Desktop -->
+            <!-- Navigation -->
             <nav class="hidden md:block">
                 <ul class="flex items-center space-x-8">
                     <li>
@@ -34,6 +34,9 @@
                         <a href="/contact" class="text-white hover:bg-white/20 transition-all duration-300 font-semibold py-3 px-6 rounded-lg">
                             Contact
                         </a>
+                    </li>
+                    <li>
+                        <a href="/virtuel" class="text-white hover:bg-white/20 transition-all duration-300 font-semibold py-3 px-6 rounded-lg">Virtuel</a>
                     </li>
                 </ul>
             </nav>
